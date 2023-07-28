@@ -22,3 +22,17 @@ If you agree with
 After that, if you want to clean your workspace : 
 
 ``terraform destroy -var project_name="YOUR_PROJECT"``
+
+If you want to run terraform within a docker image : 
+
+PLAN : 
+
+``docker run -i -t -v $PWD:$PWD -w $PWD hashicorp/terraform:1.5.4 plan -var project_name="YOUR_PROJECT"``
+
+APPLY : 
+
+``docker run -i -t -v $PWD:$PWD -w $PWD hashicorp/terraform:1.5.4 apply -var project_name="YOUR_PROJECT"`` 
+
+DESTROY : 
+
+``docker run -i -t -v $PWD:$PWD -w $PWD hashicorp/terraform:1.5.4 destroy -var project_name="YOUR_PROJECT"``
